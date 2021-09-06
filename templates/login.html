@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="main" style='padding-bottom: 6%; padding-top: 6%;'>
+  <div class="container">
+    <div class="title">Log-in</div>
+    <div class="content">
+      <form action="#">
+        <div class="user-details">
+          
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" placeholder="Enter your username" required>
+          </div>
+          
+         
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" placeholder="Enter your password" required>
+          </div>
+          
+        </div>
+        <div class="gender-details">
+          
+          <div class="category">
+            <label for="dot-1">
+            
+          </label>
+          <label for="dot-2">
+            
+          </label>
+          <label for="dot-3">
+            
+            </label>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Login">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

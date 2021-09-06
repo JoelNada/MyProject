@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<h1 style="margin-top: 1%; margin-left: 2%;">Events</h1>
+
+{% for row in rows %}
+<a href={{url_for('event',id=row['EVENT_ID'])}} style="text-decoration: none;">
+	<div class="home_cards" style="color:white;background-color: {{row['color']}}">
+		<div class="title" >
+			<p class="home_h5">{{row['EVENT_NAME']}}</p>
+		</div>
+		<div class="container-fluid">
+		<div class="home_date row">
+			<p class='home_h5 col-md-6 col-xs-12'>{{row['START_DATE']}}</p>
+			<p class="home_h5 col-md-6 col-xs-12">{{row['END_DATE']}}</p>
+		</div>
+		</div>
+	</div>
+</a>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <!-- sponser -->
+    <br>
+    <h1 class="member_head">Sponsers</h1>
+    <div class="col-lg-3 col-md-6">
+        <div class="members_card_body">
+            <div class="member_card">
+                <div class="member_card_img_top" style="background-image: url({{url_for('static', filename='images/members/faculty/M.webp')}});"></div>
+                <p class="member_card_text"> 
+                    M V Ramakrishna <br>
+                    drmvrk@gmail.com<br>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Student Members -->
+    <h1 class="member_head">Student Members</h1>  
+    <div class="container-fluid">
+        <div class="row">
+            {% for student in students %}
+            <div class="col-lg-3 col-md-6">
+                <div class="member_card">
+                    <h5 class="member_card_text"><b> {{student['TITLE']}} </b></h5>
+                    {% if student['IMAGE_AVAILABLE']==0 %} <!-- if image is empty -->
+                    <div class="member_card_img_top" style="background-image: url({{url_for('static', filename='images/members/students/{}.webp'.format(student['GENDER']))}});"></div>
+                    {% else %}
+                    <div class="member_card_img_top" style="background-image: url({{url_for('static', filename='images/members/students/{}.webp'.format(student['SNO']))}});"></div>
+                    {% endif %}
+                    <div class="members_card_body">
+                        <p class="member_card_text"> 
+                            {{student['STUDENT_NAME']}} <br>
+                            {{student['ROLL_NUM']}} <br>
+                            {{student['EMAIL']}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- faculty members -->
+    <br>
+    <h1 class="member_head">Faculty Members</h1>
+    <div class="container-fluid">
+        <div class="row">
+            {% for teacher in faculty %}
+            <div class="col-lg-3 col-md-6">
+                <div class="member_card">
+                    {% if teacher['IMAGE_AVAILABLE']==0 %} <!-- if image is empty -->
+                    <div class="member_card_img_top" style="background-image: url({{url_for('static', filename='images/members/faculty/{}.webp'.format(teacher['GENDER']))}});"></div>
+                    {% else %}
+                    <div class="member_card_img_top" style="background-image: url({{url_for('static', filename='images/members/faculty/{}.webp'.format(teacher['SNO']))}});"></div>
+                    {% endif %}
+                    <div class="members_card_body">
+                        <p class="member_card_text"> 
+                            {{teacher['FACULTY_NAME']}} <br>
+                            {{teacher['ID']}} <br>
+                            {{teacher['EMAIL']}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+  
+{% endblock %}

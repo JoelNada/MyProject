@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div class="row" style="background-color: aquamarine;">
+        <div class="col-lg-4"></div>
+        <form class="d-flex col-md-12 col-lg-4 my-5">
+            <input class="form-control me-5 py-2" type="search" placeholder="Search Roll or Name or Year or Start-End years" aria-label="Search" name="query">
+        </form>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            {% for student in students %}
+            <div class="col-lg-2 col-md-6">
+                <div class="member_card">
+                    <p class="member_card_text"><b> {{student['TITLE']}}&ensp;&ensp;</b>{{student['START_YEAR']+' - '+student['END_YEAR']}}</p>
+                    {% if student['IMAGE_AVAILABLE']==0 %} <!-- if image is empty -->
+                    <div class="member_card_img_top" style="background-image: url({{url_for('static', filename='images/members/students/{}.webp'.format(student['GENDER']))}});"></div>
+                    {% else %}
+                    <div class="member_card_img_top" style="background-image: url({{url_for('static', filename='images/members/students/{}.webp'.format(student['SNO']))}});"></div>
+                    {% endif %}
+                    <div class="members_card_body">
+                        <p class="member_card_text"> 
+                            {{student['STUDENT_NAME']}} <br>
+                            {{student['ROLL_NUM']}} <br>
+                            {{student['EMAIL']}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

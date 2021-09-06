@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<div class="container-fluid my-4" >
+
+    <div class="row">
+
+        <div class="col-lg-6 col-md-12">
+            <h4 style="text-align: center;">{{row1['EVENT_NAME'] | safe}}
+            <p style="text-align: center;">{{row1['START_DATE']}} to {{row1['END_DATE']}}</p></h4><br>
+            <h4>{{row2['SPEAKER'] | safe}}</h4>
+            <p>{{row2['ABOUT_SPEAKER'] | safe}}</p>
+            <p>{{row2['ORGANIZED_BY'] | safe}}</p><br>
+            <p>{{row2['ABOUT_EVENT'] | safe}}</p>
+        </div>
+
+        <div class="col-lg-6 col-md-12">
+            <div style="width: 100%; padding-top: 56%; background-size: cover; background-repeat: no-repeat; background-image: url({{url_for('static', filename='images/1.webp')}});">
+            </div>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

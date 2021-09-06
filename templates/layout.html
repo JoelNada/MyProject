@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    
+    <script src="https://kit.fontawesome.com/b9a9f4c4d3.js" crossorigin="anonymous"></script>
+
+    <title>TEST ACM</title>
+</head>
+<body>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" style="background-color: #537895;background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);">
+        <div class="container-fluid">
+
+            <a href={{url_for('home')}} style="text-decoration: none;">
+                <img src={{url_for('static',filename='images/logo.webp')}} alt="" width="40" height="60" style="background-color: white;">&ensp;
+            </a>
+            <a class="navbar-brand" href={{url_for('home')}} style="color:antiquewhite">
+                <h2>PVPSIT ACM&ensp;&ensp;</h2>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" id="layout_nav_a" href={{url_for('home')}}>HOME</a>&ensp;
+                    <a class="nav-link" id="layout_nav_a" href={{url_for('events')}}>EVENTS</a>&ensp;
+                    <a class="nav-link" id="layout_nav_a" href="#">GALLERY</a>&ensp;
+                    <a class="nav-link" id="layout_nav_a" href={{url_for('members')}}>MEMBERS</a>&ensp;
+                    <a class="nav-link" id="layout_nav_a" href={{url_for('alumni')}}>ALUMNI</a>&ensp;
+                    <a class="nav-link" id="layout_nav_a" href={{url_for('aboutUs')}}>ABOUT_US</a>&ensp;
+                    <a class="nav-link" id="layout_nav_a" href={{url_for('login')}}>LOGIN</a>&ensp;
+                </div>
+            </div>
+
+        </div>
+      </nav>
+    
+    <!--body-->
+    {% block body %}{% endblock %}
+
+    <!--footer-->
+    <div class="layout_footer" style="background-color: #537895;background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);">
+        <br>
+        <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-md-12">
+                <h4 style="color: white;">Useful Links</h4>
+                <a href="" style="color: skyblue;">About ACM</a><br>
+                <a href="" style="color: skyblue;">BY LAWS</a><br>
+                <a href="" style="color: skyblue;">Join ACM</a><br>
+                <a href="" style="color: skyblue;">ACM Digital Library</a><br>
+                <a href="" style="color: skyblue;">Contact ACM</a><br>
+                <a href="" style="color: skyblue;">ACM Policies</a><br>
+                <a href="" style="color: skyblue;">ACM Membership</a><br>
+                <a href="" style="color: skyblue;">ACM Chapters</a><br><br>
+            </div>
+
+            <hr class="clearfix w-100 d-lg-none layout-footline" style="color: white;">
+            <div class="col-lg-4 col-md-12">
+                <p class="layout_footer_text">
+                    <b>Sponsor:</b>&ensp;
+                    Dr. M. V. Ramakrishna<br><br>
+                    <b>Faculty Coordinators:</b>
+                    <br>
+                    J. Rama Devi<br>
+                    T. Sri Lakshmi<br><br>
+                    <b>Chair:</b>&ensp;
+                    P. Siddhartha<br><br>
+                    <b>Web Master:</b>&ensp;
+                    M. Abhinav
+                </p>
+            </div>
+
+            <hr class="clearfix w-100 d-md-none layout-footline" style="color: white;">
+            <div class="col-lg-4 col-md-12">
+                <h4 class="layout_footer_text">Contact Us</h4>
+
+                <h5 class="layout_footer_text">Prasad V. Potluri Siddhartha Institute of Technology ACM Student Chapter</h5><br>
+                <p class="layout_footer_text">
+                    <b>E-mail:</b>&ensp; <span style="color: skyblue;">acmvijayawadastudent@pvpsiddhartha.ac.in</span><br>
+                    <b>Landline:</b>&ensp;+91(866)258-1699 ext 301<br>
+                </p>      
+            </div>  
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+
